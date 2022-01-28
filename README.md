@@ -8,3 +8,9 @@ It 's write by Golang.
 ```bash
 go install github.com/fantasyczl/file-server@latest
 ```
+
+## Usage
+
+```bash
+file-server [-port 8000]
+```
