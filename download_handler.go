@@ -111,6 +111,8 @@ func dirList(w http.ResponseWriter, r *http.Request, f http.File) {
 
 	sort.Slice(entries, func(i, j int) bool {return entries.name(i) < entries.name(j)})
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.Header().Add("Cache-Control", "no-cache")
+
 	fmt.Fprintf(w, "<html><body>")
 	fmt.Fprintf(w, "<h2>%s</h2><hr>\n", "Directory listing for /")
 	fmt.Fprint(w, "<ul>")
